@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9523f68f11.js" crossorigin="anonymous"></script>
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="mylogo.jpg" alt="Logo" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">Skills</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact me</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Backend developer</p>
+                <h1>Hi , I'm <span>Vennela</span> from Hyderabad</h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <!-- <img src="Vphoto.jpg" alt="My Photo"> -->
+                </div>
+                <div class="about-col-2">
+                    <h1 class="title">About Me</h1>
+                    <p><br>Hello , I'm Vennela currently pursuing my Bachelors in Computer science at MREC Hyderabad.The Fascinating idea of Computers understanding Human commands is what made me learn Programming.Check out my Qualifications , Skills and Projects here.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Data Structures and Algorithms</span></li>
+                            <li>Backend : <span>Python , C , Java</span></li>
+                            <li>Frontend : <span>HTML , CSS , JavaScript</span></li>
+                            <li>Databases : <span>MySQL</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li>B.Tech : Computer Science at MREC <br>CGPA : 8.87  2021-2025 </li>
+                            <li>High School : PCM at JNVN<br>94% 2019-2021</li>
+                            <li>Secondary Education at JNVN <br>2014-2019</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="bg.jpg" alt="Music Player">
+                    <div class="layer">
+                        <h3>My Music Player</h3>
+                        <p>A Music Player made just for me with <br>my favorite Songs.</p>
+                        <a href="Music Player\Musicindex.html" class="link"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="logowhite.jpg" alt="My Portfolio">
+                    <div class="layer">
+                        <h3>My Portofolio</h3>
+                        <p>A personal website to Showcase <br>my skills and allows to contact me.</p>
+                        <a href="#" class="link"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="https://media.istockphoto.com/id/1768217932/vector/multiple-destinations-gps-tracking-map-track-navigation-pins-on-street-maps-navigate-mapping.jpg?s=612x612&w=0&k=20&c=6O3Hgw29yP5KoqWduJ3EYSWgKr72ftE1fO7UVQX8ME4=" alt="Location Tracker">
+                    <div class="layer">
+                        <h3>Location Detector</h3>
+                        <p>An Interface to detect location using Mobile number.</p>
+                        <a href="https://github.com/VennelaNallavelli/Location-Tracking.git" class="link"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope fa-xs"></i><span>vennelanallavelli29gmail.com</span></p>
+                    <p><i class="fa-solid fa-phone fa-2xs"></i><span>6302675321</span></p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/vennela-srinivas-23a90724b"><i class="fa-brands fa-linkedin fa-sm"></i></a>
+                        <a href="https://github.com/VennelaNallavelli"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.hackerrank.com/profile/Vennela29"><i class="fa-brands fa-hackerrank"></i></a>
+                    </div>
+                    <a href="Vennela Resume.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+
+                <div class="contact-right">
+                    <form name='submit-to-google-sheet'>
+                        <input type="text" name="Name" placeholder=" Name" id="name" required>
+                        <input type="text" name="Email-id" placeholder=" Email" id="Email" required>
+                        <textarea name="Message" id="message" rows="2" placeholder=" Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">All Copyrights Reserved @Vennela.</div>
+    </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname)
+        {
+            for(tablink of tablinks)
+            {
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents)
+            {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        var sidemenu=document.getElementById("sidemenu");
+        function openmenu()
+        {
+            sidemenu.style.right="0"
+        }
+        function closemenu()
+        {
+            sidemenu.style.right="-113px"
+        }
+    </script>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw3V9ozAp6aWReI9MysjtqbtNRlp6IdMh4bV6m_6bsoVjh3M0PsbA_2M-XqLyGfVMKB/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{
+                msg.innerHTML="Message sent Successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
